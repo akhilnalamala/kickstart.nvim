@@ -3,6 +3,8 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+
+  -- Vim Tmux Navigator
   {
     'christoomey/vim-tmux-navigator',
     cmd = {
@@ -19,5 +21,17 @@ return {
       { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
+  },
+
+  -- Codeium AI Autocomplete
+  {
+    'Exafunction/codeium.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'hrsh7th/nvim-cmp',
+    },
+    config = function()
+      require('codeium').setup {}
+    end,
   },
 }
