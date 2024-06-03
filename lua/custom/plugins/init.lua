@@ -43,4 +43,10 @@ return {
     -- use opts = {} for passing setup options
     -- this is equalent to setup({}) function
   },
+
+  -- Telescope file browsing extension
+  {
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+  },
 }
