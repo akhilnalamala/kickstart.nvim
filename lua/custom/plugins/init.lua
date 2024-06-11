@@ -35,15 +35,6 @@ return {
     end,
   },
 
-  -- Autopairs plugin
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    config = true,
-    -- use opts = {} for passing setup options
-    -- this is equalent to setup({}) function
-  },
-
   -- Telescope file browsing extension
   {
     'nvim-telescope/telescope-file-browser.nvim',
@@ -55,18 +46,6 @@ return {
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('colorizer').setup()
-    end,
-  },
-
-  -- Custom theme - Carbonfox
-  { 'navarasu/onedark.nvim' },
-
-  -- Lualine
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup {}
     end,
   },
 }
