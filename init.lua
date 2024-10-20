@@ -662,6 +662,17 @@ require('lazy').setup({
           end,
         },
       }
+
+      -- manually setup SourceKit
+      -- this is not in scope for Mason (GitHub Discussions)
+      local lspconfig = require 'lspconfig'
+      capabilities.workspace.didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      }
+
+      lspconfig.sourcekit.setup {
+        capabilities = capabilities,
+      }
     end,
   },
 
@@ -699,6 +710,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        swift = { 'swiftformat' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -743,6 +755,7 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
     },
     config = function()
       -- See `:help cmp`
@@ -931,7 +944,6 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
-
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
