@@ -665,17 +665,6 @@ require('lazy').setup({
           end,
         },
       }
-
-      -- manually setup SourceKit
-      -- this is not in scope for Mason (GitHub Discussions)
-      local lspconfig = require 'lspconfig'
-      capabilities.workspace.didChangeWatchedFiles = {
-        dynamicRegistration = true,
-      }
-
-      lspconfig.sourcekit.setup {
-        capabilities = capabilities,
-      }
     end,
   },
 
@@ -713,7 +702,6 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        swift = { 'swiftformat' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
