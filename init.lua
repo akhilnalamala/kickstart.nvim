@@ -911,6 +911,10 @@ require('lazy').setup({
       vim.opt.termguicolors = true
       vim.opt.background = 'dark'
 
+      require('gruvbox').setup {
+        transparent_mode = true,
+      }
+
       vim.cmd.colorscheme 'gruvbox'
     end,
   },
