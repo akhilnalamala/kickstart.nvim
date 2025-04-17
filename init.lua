@@ -899,7 +899,7 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'ellisonleao/gruvbox.nvim',
+    'sainnhe/gruvbox-material',
     lazy = false,
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
@@ -911,11 +911,10 @@ require('lazy').setup({
       vim.opt.termguicolors = true
       vim.opt.background = 'dark'
 
-      require('gruvbox').setup {
-        transparent_mode = true,
-      }
+      -- vim.g.gruvbox_material_transparent_background = 1
+      vim.g.gruvbox_material_foreground = 'original'
 
-      vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 
